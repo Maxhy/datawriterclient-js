@@ -19,6 +19,7 @@
     "print"
   ],
   "scripts": {
+    "install": "grunt",
     "test": "grunt test"
   },
   "repository": {

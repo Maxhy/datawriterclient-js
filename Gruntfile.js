@@ -98,7 +98,7 @@ module.exports = function(grunt){
     cssmin: {
       minify: {
         expand: true,
-        cwd: 'build/temp/',
+        cwd: 'src/css/',
         src: ['datawriterclient.css'],
         dest: 'build/temp/',
         ext: '.min.css'
@@ -220,15 +220,18 @@ module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('chg');
 
-  grunt.registerTask('build', [
+ grunt.registerTask('build', [
     'clean:build',
+    'clean:dist',
     'jshint',
+    'cssmin',
     'browserify:build',
     'exorcise:build',
     'uglify',
     'copy:css',
-    'version:css',
-    'cssmin'
+    'copy:dist',
+    'clean:build',
+    'version:css'
   ]);
 
   grunt.registerTask('dist', [
