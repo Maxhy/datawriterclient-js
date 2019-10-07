@@ -190,7 +190,7 @@ export default class DWTasksProtocol {
 				if (!isReadOnly) {
 					input += '<input id="' + name + this.DW_RECORD_FIELD_NAME + 'FileButton" type="file" accept="image/*"/>';
 					if (DWWebcam.hasUserMediaSupport()) {
-						input += '<button id="' + name + this.DW_RECORD_FIELD_NAME + 'WebCamButton" type="button" class="btn btn-default" data-toggle="modal" data-target="#dwCameraModal">Webcam</button>';
+						input += '<button id="' + name + this.DW_RECORD_FIELD_NAME + 'WebCamButton" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#dwCameraModal">Webcam</button>';
 					}
 				}
 				input += '</div>';

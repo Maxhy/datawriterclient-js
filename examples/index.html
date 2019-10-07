@@ -2,64 +2,64 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>ISLOG DataWriter Web Client</title>
-	<link rel="stylesheet" type="text/css" href="../datawriterclient.min.css">
-	<script src="../datawriterclient.min.js" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="../dist/datawriterclient.min.js" type="text/javascript"></script>
+	<!-- Required JQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" integrity="sha384-rIsqnpLrwX4K3awoYuZJSLL2vJ8JyzJUspe/IC5DOhiTj/RGJPU+WcqioHmpKUOp" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../dist/datawriterclient.min.css">
 </head>
 <body>
 	<!-- view -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
-				<div class="panel panel-primary">
-					<div class="panel-heading" id="accordion">
-						<span class="glyphicon glyphicon-credit-card"></span> Card encoding 
-						<div class="pull-right">
+				<div class="card card.bg-primary.text-white card-encoder">
+					<div class="card-header text-white" id="accordion">
+						<span class="far fa-credit-card"></span> Card encoding 
+						<div class="float-right">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default btn-xs" id="showTasksButton" onclick="dwWebClient.TaskProtocol.getTaskList()" style="display:none">
-									<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Tasks
+								<button type="button" class="btn btn-secondary btn-sm" id="showTasksButton" onclick="dwWebClient.TaskProtocol.getTaskList()" style="display:none">
+									<span class="fas fa-tasks" aria-hidden="true"></span> Tasks
 								</button>
 							</div>
 							<div class="btn-group">
-								<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#dwSettingsModal" onclick="loadDWModalSettings()">
-									<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
+								<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#dwSettingsModal" onclick="loadDWModalSettings()">
+									<span class="fas fa-cog" aria-hidden="true"></span> Settings
 								</button>
 							</div>
 							&nbsp;&nbsp;&nbsp;
 							<div class="btn-group">
-								<a type="button" href="#collapseOne" onclick="startDWWebClient();">
-									<span class="glyphicon glyphicon-play" style="color:white"></span>
+								<a id="StartEncoding" type="button" href="#collapseOne" onclick="startDWWebClient();">
+									<span class="fas fa-play" style="color:white"></span>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="panel-collapse collapse" id="collapseOne">
+					<div class="card-collapse collapse" id="collapseOne">
 						<div class="row">
 							<div class="col-md-6">
-								<div class="panel-body" id="dwmessagesscroll">
+								<div class="card-body" id="dwmessagesscroll">
 									<ul class="list-group" id="dwmessages">						  
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="panel-body" id="dwmessagesscroll">
+								<div class="card-body" id="dwmessagesscroll">
 									<div id="cardPreviewId" style="display: none;">
 										<div class="row">
 											<h4>Card preview:</h4>
-											<img id="cardPreviewImgId" class="img-responsive img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
-											<img id="cardPreviewImgBackId" class="img-responsive img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
+											<img id="cardPreviewImgId" class="img-fluid img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
+											<img id="cardPreviewImgBackId" class="img-fluid img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
 										</div>
 									</div>
 									<div class="row">
 										<h4 class="vcenter">Record fields:</h4>
-										<button type="button" class="btn btn-primary vcenter pull-right" id="userValideButton" style="display:none; vertical-align: middle; margin-bottom: 10px; margin-right: 10px;"
+										<button type="button" class="btn btn-primary vcenter float-right" id="userValideButton" style="display:none; vertical-align: middle; margin-bottom: 10px; margin-right: 10px;"
 										onclick="dwWebClient.TaskProtocol.UserInteractionAskedCompleted()">
 										Validate
 									</button>
@@ -80,8 +80,8 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="dwSettingsModalLabel">Settings</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
 			 <div class="form-group">
@@ -98,7 +98,7 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="taskId">Task ID:</label>
-			    <input type="number" class="form-control" id="dwTaskId" />
+			    <input type="number" class="form-control" id="dwTaskId" min=0 />
 			  </div>
 			  <div class="form-group">
 				<label>Device Technologies:</label>
@@ -109,7 +109,7 @@
 			  </div>
 			</div>
 			<div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 	          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="getDWModalSettings()">Save changes</button>
 	        </div>
 		</div>
@@ -121,8 +121,8 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="dwTaskSelectorLabel">Select the task to perform</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="dwTaskSelectorList">
 				<!-- tasks info -->
@@ -136,8 +136,8 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="dwCameraLabel">Webcam</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
 				<div class="row text-center">
@@ -179,8 +179,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<img id="cardPreviewImgModalId" class="img-responsive img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
-					<img id="cardPreviewImgBackModalId" class="img-responsive img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
+					<img id="cardPreviewImgModalId" class="img-fluid img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
+					<img id="cardPreviewImgBackModalId" class="img-fluid img-thumbnail col-sm-6 vcenter card-img" src="" style="display: none;"/>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal" onclick="dwWebClient.TaskProtocol.CancelPrintClientCreationStep()">Cancel</button>

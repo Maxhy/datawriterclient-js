@@ -1,12 +1,41 @@
-.panel .slidedown .glyphicon
+body {
+    font-size: 14px;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+svg
 {
     margin-right: 5px;
 }
 
-.panel-body
+button {
+    font-size: small;
+    background-color: white;
+    color: black;
+}
+
+.card-header  {
+    background-color: #2e6da4;
+    border-color: #2e6da4;
+    padding: 7px;
+    color: white;
+}
+
+.card {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-secondary, .btn-secondary:hover {
+    background-color: white;
+    color: black;
+}
+
+.bg-primary
 {
     overflow-y: scroll;
     height: 250px;
+    background-color: transparent!important;
 }
 
 ::-webkit-scrollbar-track
@@ -27,7 +56,7 @@
     background-color: #555;
 }
 
-.glyphicon.glyphicon-play {
+.fas.fa-play {
     font-size: 20px;
 }
 
@@ -40,4 +69,32 @@
 .card-img {
     padding: 0px !important;
     border-radius: 12px !important;
+}
+
+#dwmessagesscroll > #dwmessages > li, #dwTaskSelectorList > button {
+    background-color: transparent;
+    border: none;
+}
+  
+.card.card-encoder {
+    border-color: #337ab7;
+}
+
+.card.card-encoder > .card-header {
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+#userValideButton {
+    margin-left: 20px;
+}
+
+#dwmessagesscroll > .row {
+    align-items: center;
+}
+
+/* Remove Chrome&Safari only button style */
+
+a[type="button"] {
+  -webkit-appearance: none;
 }
