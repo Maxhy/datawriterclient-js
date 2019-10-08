@@ -1,6 +1,6 @@
 {
 	"name": "datawriterclient-js",
-	"version": "0.2.0",
+	"version": "0.3.1",
 	"description": "DataWriter Web Client JavaScript library",
 	"author": {
 		"name": "Adrien J.",
@@ -39,6 +39,6 @@
 		"build"
 	],
 	"dependencies": {
-		"jquery": ">=2.2.0"
+		"jquery": ">=3.4.1"
 	}
 }

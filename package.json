@@ -1,6 +1,6 @@
 {
   "name": "datawriterclient-js",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "DataWriter Client JavaScript library",
   "copyright": "Copyright ISLOG (D3L SARL) <http://www.islog.com/>",
   "license": "SEE LICENSE IN LICENSE",
@@ -19,7 +19,7 @@
     "print"
   ],
   "scripts": {
-    "install": "grunt",
+	"build": "grunt",
     "test": "grunt test"
   },
   "repository": {
