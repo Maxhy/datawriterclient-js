@@ -220,7 +220,7 @@
 		dwWebClientParam['uri'] = $('#dwUri').val();
 		dwWebClientParam['login'] = $('#dwLogin').val();
 		dwWebClientParam['password'] = $('#dwPassword').val();
-		dwWebClientParam['taskId'] = $('#dwTaskId').val();
+		dwWebClientParam['taskId'] = parseInt($('#dwTaskId').val());
 		
 		dwWebClientParam['deviceTech'] = new Array();
 		if ($('#dwTechJava').prop('checked')) {
