@@ -31,7 +31,7 @@
   "main": "dist/datawriterclient.js",
   "style": "./dist/datawriterclient.css",
   "dependencies": {
-    "jquery": "3.4.1"
+    "jquery": "3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
